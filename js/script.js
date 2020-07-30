@@ -178,3 +178,63 @@
 //если countryName равно "Чили"
 // то значение message будет равно
 // 'В выбранную страну доставка недоступна.'
+
+//
+//
+//
+//
+//
+//
+//
+//
+// ТЕСТУВАНННЯ МАСИВІВ
+// const friends = ["dfg", "vbn", "jkl", "tyu", "adrgfadfg", "12345"];
+// console.table(friends);
+
+// const lastIndex = friends.length - 1;
+// console.log(lastIndex);
+
+// for (let i = 0; i < friends.length; i += 1) {
+//   //   console.log(friends[i]);
+//   //   console.log(friends);
+//   friends[i] += `-${i + 1}`;
+// }
+// console.table(friends);
+
+// for (const friend of friends) {
+//   console.log(friend);
+// }
+//
+//
+//
+//
+//
+// СУМА ЕЛЕМНТІВ МАСИВУ
+// let summ = 0;
+
+// варіант 1
+// const cart = [1, 2, 3, 4];
+// for (let i = 0; i < cart.length; i += 1) {
+//   summ += cart[i];
+// }
+// console.log(summ);
+
+// варіант - 2
+// const cart = [1, 2, 3, 4];
+// for (const car of cart) {
+//   summ += car;
+// }
+// console.log(summ);
+//
+//
+//
+//
+//
+//
+// ДОБАВЛЯЄ % ДО КОЖНОГО ЕЛЕМЕНТА МАСИВУ
+
+const array = [10, 10, 10, 10];
+for (let i = 0; i < array.length; i += 1) {
+  array[i] *= 1.1;
+}
+console.log(array);
