@@ -231,10 +231,95 @@
 //
 //
 //
-// ДОБАВЛЯЄ % ДО КОЖНОГО ЕЛЕМЕНТА МАСИВУ
+// // ДОБАВЛЯЄ % ДО КОЖНОГО ЕЛЕМЕНТА МАСИВУ
 
-const array = [10, 10, 10, 10];
-for (let i = 0; i < array.length; i += 1) {
-  array[i] *= 1.1;
-}
-console.log(array);
+// const array = [10, 10, 10, 10];
+// for (let i = 0; i < array.length; i += 1) {
+//   array[i] *= 1.1;
+// }
+// console.log(array);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// СУМУЄ ПАРНІ ЧИСЛА
+// let total = 0;
+// const base = [1, 2, 3, 4, 10];
+
+// for (const bas of base) {
+//   if (bas % 2 === 0) {
+//     console.log("Парне число", bas);
+//     total += bas;
+//   }
+// }
+// console.log(total);
+//
+//
+//
+//
+//
+//
+//
+// НАЙТИ ЛОГІН
+/*
+ * Напиши скрипт поиска логина
+ * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
+ * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
+ *
+ * - Сначала через for
+ * - Потом через for...of
+ * - Логика break
+ * - Метод includes() с тернарным оператором
+ */
+// варіант-1
+// const logins = ["m4ngoDoge", "k1widab3st", "poly1scute", "aj4xth3m4n"];
+// const loginToFind = "poly1scute";
+// let message = "";
+
+// for (let i = 0; i < logins.length; i += 1) {
+//   if (logins[i] === loginToFind) {
+//     message = `Логін ${loginToFind} є в базі`;
+//     // console.log(`Логін ${loginToFind} є в базі`);
+//     break;
+//   }
+//   message = `Логін ${loginToFind} НЕ ЗНАЙДЕНО`;
+// }
+
+// console.log(message);
+//
+//
+// варіант2
+// const logins = ["m4ngoDoge", "k1widab3st", "poly1scute", "aj4xth3m4n"];
+// const loginToFind = "poly1scute";
+
+// const message = logins.includes(loginToFind) ? `Логін ${loginToFind} є в базі` : `Логін ${loginToFind} НЕ ЗНАЙДЕНО`;
+
+// console.log(message);
+//
+//
+//
+//
+//
+//
+//
+// ПОШУК НАЙМЕНШОГО ЧИСЛА
+/*
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let minValue = numbers[0];
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   if (minValue > numbers[i]) {
+//     minValue = numbers[i];
+//   }
+// }
+// console.log(minValue);
