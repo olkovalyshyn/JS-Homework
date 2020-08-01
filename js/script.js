@@ -210,12 +210,32 @@
 //
 //
 // СУМА ЕЛЕМНТІВ МАСИВУ
+// const calculateTotalPrice = function (items) {
+//   console.log(`items всередині функції: `, items);
+
+//   let total = 0;
+
+//   for (const item of items) {
+//     total += item;
+//   }
+
+//   return total;
+// };
+
+// console.log(calculateTotalPrice([5, 10, 15, 20]));
+// console.log(calculateTotalPrice([123, 345, 444, 678, 789]));
+// console.log(calculateTotalPrice([1, 1, 1, 1, 1]));
+//
+//
+//
+//
+//
 // let summ = 0;
 
-// варіант 1
+// // варіант 1
 // const cart = [1, 2, 3, 4];
-// for (let i = 0; i < cart.length; i += 1) {
-//   summ += cart[i];
+// for (const car of cart) {
+//   summ += car;
 // }
 // console.log(summ);
 
