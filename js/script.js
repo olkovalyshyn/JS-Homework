@@ -1,4 +1,4 @@
-// ЗАДАЧА 1/5
+// ЗАДАЧА 1.1
 // const name = "«Генератор защитного поля»"; // Write code on this line
 // let price = 1000; // Write code on this line
 // const firstMessage = `Выбран ${name}, цена за штуку ${price} кредитов`; // Write code on this line
@@ -16,7 +16,7 @@
 //
 //
 //
-// ЗАДАЧА 2/5
+// ЗАДАЧА 1.2
 // const invoice = 100;
 // const stock = 100;
 
@@ -42,7 +42,7 @@
 //
 //
 //
-// ЗАДАЧА 3/5
+// ЗАДАЧА 1.3
 // const userPassword = 123;
 
 // const ADMIN_PASSWORD = 'jqueryismyjam';
@@ -81,7 +81,7 @@
 //
 //
 //
-// ЗАДАЧА 4/5
+// ЗАДАЧА 1.4
 // const orderPieces = 1;
 
 // const credits = 23580;
@@ -126,7 +126,7 @@
 //
 //
 //
-// ЗАДАЧА 5/5
+// ЗАДАЧА 1.5
 // const countryName = null;
 
 // const CANCELED_BY_USER = 'Отменено пользователем!';
@@ -197,7 +197,7 @@
 // for (let i = 0; i < friends.length; i += 1) {
 //   //   console.log(friends[i]);
 //   //   console.log(friends);
-//   friends[i] += `-${i + 1}`;
+//   friends[i] += `- ${i + 1}`;
 // }
 // console.table(friends);
 
@@ -343,3 +343,121 @@
 //   }
 // }
 // console.log(minValue);
+//
+//
+//
+//
+//
+// let result = [];
+// const getItemsString = function (array) {
+//     "use strict";
+//     // Write code under this line
+
+//     for (let i = 0; i < array.length; i += 1) {
+//         result[i] = `${i + 1} - ${array[i]}`;
+//     }
+//     return result.join("\n");
+// };
+//
+//
+//
+//
+// ЗАДАЧА 2.1
+// const getItemsString = function (array) {
+//   "use strict";
+//   // Write code under this line
+//   let result = "";
+//   for (let i = 0; i < array.length; i += 1) {
+//     result += `${i + 1} - ${array[i]}\n`;
+//   }
+//   return result;
+// };
+
+// console.log(getItemsString(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]));
+/*
+'1 - Mango
+2 - Poly
+3 - Ajax
+4 - Lux
+5 - Jay
+6 - Kong
+'
+*/
+
+// console.log(getItemsString([5, 10, 15]));
+/*
+'1 - 5
+2 - 10
+3 - 15
+'
+*/
+//
+//
+//
+//
+//
+//
+//
+//
+// ЗАДАЧА 2 - 2
+// Подсчет стоимости гравировки украшений
+// Напиши скрипт подсчета стоимости гравировки украшений.Для этого создай функцию calculateEngravingPrice(message = "", pricePerWord = 0) принимающую строку(в строке будут только слова и пробелы) и цену гравировки одного слова, и возвращающую цену гравировки всех слов в строке.
+
+// Для решения этой задачи не используйте циклы.Т.е.никаких for, while, do while, for of, for in, forEach или функциональных методов.
+
+// const calculateEngravingPrice = (message = "", pricePerWord = 0) => message.split(" ").length * pricePerWord; // Write code in this line
+
+// console.log(calculateEngravingPrice("Proin sociis natoque et magnis parturient montes mus", 10)); // 80
+
+//console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 20)); // 160
+
+//console.log(calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40)); // 240
+
+//console.log(calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20)); // 120
+
+//console.log(calculateEngravingPrice('Uno', 100)); // 100
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 2 - 3
+// Поиск самого длинного слово в строке с пробелами
+// Напиши функцию findLongestWord(string = ""), которая принимает параметром произвольную строку(в строке будут только слова и пробелы)
+// и возвращает самое длинное слово в этой строке.
+function findLongestWord(string = "") {
+  //   "use strict";
+  // Write code under this line
+  const words = string.split(" ");
+  let lengthLongestWord = words[0].length;
+  let nameLongestWord = words[0];
+
+  for (let i = 0; i < words.length; i += 1) {
+    if (lengthLongestWord < words[i].length) {
+      lengthLongestWord = words[i].length;
+    }
+  }
+  for (let i = 0; i < words.length; i += 1) {
+    if (lengthLongestWord === words[i].length) {
+      nameLongestWord = words[i];
+    }
+  }
+
+  return nameLongestWord;
+  console.log(lengthLongestWord);
+  console.log(nameLongestWord);
+}
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+// 'jumped'
+
+// console.log(findLongestWord("Google do a roll"));
+// 'Google'
+
+// console.log(findLongestWord("May the force be with you"));
+// 'force'
