@@ -687,41 +687,41 @@
 // addLogin добавляет или не добавляет логин в массив.При этом для проверок условия добавления использует результаты вызовов
 // других функций - isLoginUnique и isLoginValid.
 
-function isLoginValid(login, min = 4, max = 16) {
-  // Write code under this line
-  let boolIsLoginValid = login.length >= min && login.length <= max;
-  return boolIsLoginValid;
-}
+// function isLoginValid(login, min = 4, max = 16) {
+//   // Write code under this line
+//   let boolIsLoginValid = login.length >= min && login.length <= max;
+//   return boolIsLoginValid;
+// }
 
-function isLoginUnique(allLogins, login) {
-  "use strict";
-  // Write code under this line
-  let boolIsLoginUnique = !allLogins.includes(login);
-  return boolIsLoginUnique;
-}
+// function isLoginUnique(allLogins, login) {
+//   "use strict";
+//   // Write code under this line
+//   let boolIsLoginUnique = !allLogins.includes(login);
+//   return boolIsLoginUnique;
+// }
 
-function addLogin(allLogins, login) {
-  "use strict";
-  const SUCCESS = "Логин успешно добавлен!";
-  const REFUSAL = "Такой логин уже используется!";
-  const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
-  let message;
-  // Write code under this line
-  if (isLoginValid(login, 4, 16) === false) {
-    return ERROR;
-  }
+// function addLogin(allLogins, login) {
+//   "use strict";
+//   const SUCCESS = "Логин успешно добавлен!";
+//   const REFUSAL = "Такой логин уже используется!";
+//   const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
+//   let message;
+//   // Write code under this line
+//   if (isLoginValid(login, 4, 16) === false) {
+//     return ERROR;
+//   }
 
-  if (isLoginUnique(allLogins, login) === false) {
-    return REFUSAL;
-  }
+//   if (isLoginUnique(allLogins, login) === false) {
+//     return REFUSAL;
+//   }
 
-  allLogins.push(login);
-  return SUCCESS;
-}
+//   allLogins.push(login);
+//   return SUCCESS;
+// }
 
-const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
-console.log(logins);
-console.log(addLogin(logins, "Ajax"));
+// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+// console.log(logins);
+// console.log(addLogin(logins, "Ajax"));
 // 'Логин успешно добавлен!'
 
 // console.log(addLogin(logins, "robotGoogles"));
@@ -737,3 +737,23 @@ console.log(addLogin(logins, "Ajax"));
 
 // console.log(isLoginUnique(logins, "Aj4x1sBozz"));
 // console.log("111".length >= 4 && "111".length <= 16);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// ОБ'ЄКТИ
+const playlist = {
+  name: "My super list",
+  rating: 5,
+  track: ["track-1", "track - 2", "track - 3"],
+  trackCount: 3,
+};
+
+console.log(playlist.rating);
