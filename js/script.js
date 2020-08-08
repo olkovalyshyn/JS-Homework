@@ -47,7 +47,7 @@ const friends = [
   { name: "Poly", online: true },
   { name: "Ajax", online: false },
 ];
-console.table(friends);
+// console.table(friends);
 
 // for (const friend of friends) {
 //   console.log(friend);
@@ -57,5 +57,113 @@ console.table(friends);
 //   // console.log(friend);
 // }
 // console.table(friends);
+//
+//
+//
+//ПОШУК ІМЕН
+// const findFriendByName = function (allFriends, name) {
+//   for (const friend of allFriends) {
+//     console.log(friend.name);
+//     // console.log(friend.name);
+//     if (friend.name === name) {
+//       return "Найдено таке імя";
+//     }
+//   }
+//   return "Відсутнє name в даному переліку";
+// };
 
-const findFriendByName = function (allFriends, name) {};
+// console.log(findFriendByName(friends, "123"));
+//
+//
+//
+// Створення масиву із імен
+// const getAllNames = function (friends) {
+//   const names = [];
+
+//   for (const friend of friends) {
+//     console.log(friend.name);
+//     names.push(friend.name);
+//   }
+//   return names;
+// };
+// console.log(getAllNames(friends));
+//
+//
+//
+//
+// ОТРИМАТИ ІМЕНА ДРУЗІВ, ЯКІ ОНЛАЙН
+// const getOnlineFriends = function (allFriends) {
+//   const onlineFriends = [];
+//   for (const friend of allFriends) {
+//     // console.log(friend);
+//     // console.log(friend.online);
+//     if (friend.online) {
+//       onlineFriends.push(friend);
+//     }
+//   }
+//   return onlineFriends;
+// };
+
+// console.log(getOnlineFriends(friends));
+//
+//
+//
+//
+// ОТРИМАТИ ІМЕНА ДРУЗІВ, ЯКІ і ОНЛАЙН і офлайн в різні масиви
+// const getFriendsByOnlineStatus = function (allFriends) {
+//   const friendByStatus = {
+//     online: [],
+//     offline: [],
+//   };
+//   for (const friend of allFriends) {
+//     if (friend.online) {
+//       friendByStatus.online.push(friend);
+//     } else {
+//       friendByStatus.offline.push(friend);
+//     }
+//   }
+//   return friendByStatus;
+// };
+
+// console.log(getFriendsByOnlineStatus(friends));
+//
+//
+//
+//
+//
+//
+// РОЗПИЛЕННЯ
+// const temps = [15, 45, 89, 65, 32, 85, 78];
+// console.log(temps);
+// console.log(...temps);
+// console.log([1000, ...temps, 10000]);
+
+// const a = [15, 45, 89, 65, 32, 85, 78];
+// const b = a;
+// console.log(a === b); //true
+
+// const a = [15, 45, 89, 65, 32, 85, 78];
+// const b = [a];
+// console.log(a === b); //false
+// a[0] = 900; // і на а і на в
+// console.log("a:", a);
+// console.log("a:", b);
+
+// const a = [15, 45, 89, 65, 32, 85, 78];
+// const b = [...a];
+// console.log(a === b); //false
+// a[0] = 1000; //лише на а
+// console.log("a:", a);
+// console.log("a:", b);
+
+// const a = [{ x: 15 }, { y: 45 }];
+// const b = [...a];
+// console.log(a === b); //false
+// a[0].x = 1000; // і на а і на в
+// console.log("a:", a);
+// console.log("a:", b);
+
+const a = { x: 2, f: 7 };
+const b = { x: 8, j: 7 };
+const c = { ...a, ...b };
+console.log(c);
