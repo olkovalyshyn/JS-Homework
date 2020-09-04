@@ -302,15 +302,145 @@
 //
 //
 //
-const tweets = [
-  { id: "000", likes: 5, tags: ["js", "nodejs"] },
-  { id: "001", likes: 2, tags: ["html", "css"] },
-  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-  { id: "003", likes: 8, tags: ["css", "react"] },
-  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+// const allTags = tweets.reduce((tags, tweet) => {
+//   tags.push(...tweet.tags);
+//   return tags;
+// }, []);
+// console.log(allTags);
+
+// попереднє із скороченням
+// const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
+// console.log(allTags);
+
+// підкрахунок кількості однакових тегів
+// const tagsStats = allTags.reduce((acc, tag) => {
+//   console.log(acc);
+//   if (acc[tag]) {
+//     acc[tag] += 1;
+//     return acc;
+//   }
+
+//   acc[tag] = 1;
+//   return acc;
+// }, {});
+// console.log(tagsStats);
+
+// пререробка для лінтерів - переписуємо імутабельно, тобто
+// на кожній ітерації створюємо новий об'єкт акумулятора
+// const tagsStats = allTags.reduce((acc, tag) => {
+//   if (acc[tag]) {
+//     return {
+//       ...acc,
+//       [tag]: acc[tag] + 1,
+//     };
+//   }
+//   return {
+//     ...acc,
+//     [tag]: 1,
+//   };
+// }, {});
+// console.log(tagsStats);
+
+// спрощення верхнього до тернарника
+// const tagsStats = allTags.reduce((acc, tag) => {
+//   return acc[tag] ? { ...acc, [tag]: acc[tag] + 1 } : { ...acc, [tag]: 1 };
+// }, {});
+// console.log(tagsStats);
+
+// ще простіший тернарник
+// const tagsStats = allTags.reduce((acc, tag) => {
+//   return {
+//     ...acc,
+//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//   };
+// }, {});
+// console.log(tagsStats);
+
+// ще простіший тернарник без return
+// const tagsStats = allTags.reduce(
+//   (acc, tag) => ({
+//     ...acc,
+//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//   }),
+//   {}
+// );
+// console.log(tagsStats);
+//
+//
+//
+//
+// const user = {
+//   name: "Mango",
+// };
+// const key = "name";
+// console.log(user[key]);
+//
+//
+//
+//
+//
+//
+//
+//
+// SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT
+// const numbers = [5, 8, 1, 1, 4, 45, 6, 1, 458, 7];
+// numbers.sort();
+// console.log(numbers);
+
+// сортування по зростанню
+// numbers.sort((curEl, nextEl) => {
+//   return curEl - nextEl;
+// });
+// console.log(numbers);
+
+// сортування по спаданню
+// numbers.sort((curEl, nextEl) => {
+//   return nextEl - curEl;
+// });
+// console.log(numbers);
+
+// створення нового масиву для сортування
+// const copy = [...numbers].sort((curEl, nextEl) => {
+//   return curEl - nextEl;
+// });
+// console.log(copy);
+//
+//
+//
+//
+// СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ
+//
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
+  { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
 ];
-const allTags = tweets.reduce((tags, tweet) => {
-  tags.push(...tweet.tags);
-  return tags;
-}, []);
-console.log(allTags);
+// const copy = [...players];
+// console.log(copy);
+
+// copy.sort((first, second) => first.timePlayed - second.timePlayed);
+// console.log(copy);
+
+//
+// СОРТУВАННЯ ІМЕН ПО ПЕРШІЙ БУКВІ
+const copy = [...players].sort((a, b) => {
+  const result = a.name[0] < b.name[0];
+  if (result) {
+    return -1;
+  }
+  if (!result) {
+    return 1;
+  }
+});
+console.table(copy);
+
+console.log("1".charCodeAt());
