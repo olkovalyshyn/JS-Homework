@@ -417,13 +417,13 @@
 //
 // СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ
 //
-const players = [
-  { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-  { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-  { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-  { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-  { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-];
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
+//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
+//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
+// ];
 // const copy = [...players];
 // console.log(copy);
 
@@ -432,15 +432,83 @@ const players = [
 
 //
 // СОРТУВАННЯ ІМЕН ПО ПЕРШІЙ БУКВІ
-const copy = [...players].sort((a, b) => {
-  const result = a.name[0] < b.name[0];
-  if (result) {
-    return -1;
-  }
-  if (!result) {
-    return 1;
-  }
-});
-console.table(copy);
+// const copy = [...players].sort((a, b) => {
+//   const result = a.name[0] < b.name[0];
+//   if (result) {
+//     return -1;
+//   }
+//   if (!result) {
+//     return 1;
+//   }
+// });
+// console.table(copy);
 
-console.log("1".charCodeAt());
+// console.log("1".charCodeAt());
+//
+//
+//
+//
+//
+//
+//
+//
+// FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT
+
+// const array = [9, 4, [12, [5, 87], 11]];
+// console.log(array.flat(2));
+
+// спрощення раніше зазначених задач
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+// const tags = tweets.map((t) => t.tags).flat();
+// console.log(tags);
+
+// FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap
+// спрощення попередного коду
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+// const tags = tweets.flatMap((t) => t.tags);
+// console.log(tags);
+//
+//
+//
+//
+//
+//
+//
+//
+// ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ   ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ
+// задача відсортувати гравців онлайн і сортування за зростанням
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
+//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
+//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
+// ];
+// const onlineAndSorted = players.filter((player) => player.online).sort((a, b) => a.points - b.points);
+
+// console.table(onlineAndSorted);
+//
+//
+//
+//
+//
+//
+//
+// Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash
+// https://www.jsdelivr.com/package/npm/lodash
+// посилання на бібліотеку в НТМЛ
+// <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>;
+
+// console.dir(_);
