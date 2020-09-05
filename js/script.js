@@ -1,514 +1,434 @@
-// МАСИВИ перебирання
-//
-//
-//
-// forEach
-//
-//
-// const numbers = [5, 25, 100, 190, 550];
+// Задача 6 - 1
+// map
+// Получи массив имен всех пользователей(свойство name) используя деструктурирующее
+// присваивание для параметра функции({ name }) без пробелов и переносов на новую строку.
 
-// numbers.forEach(
-//   function (number) {
-//     console.log("number -", number);
-//     console.log(this);
+// Используй только перебирающие методы массива которые не изменяют(не мутируют)
+// исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// Деструктурирующее присваивание для параметра функции
+// PS Деструктурирующее присваивание(ДП):
+
+// Объект как параметр без ДП
+// const object = { num: 2 }
+// function getNum(obj) { return obj.num; }
+// console.log(getNum(object)) // 2
+// ДП
+// const object = { num: 2 }
+// // const num  =  object.num;
+// const { num } = object;
+// console.log(num) // 2
+
+// Объект как параметр c ДП
+// const object = { num: 2 }
+// //function getNum (obj) { return obj.num; }
+// function getNum({ num }) { return num; }
+// console.log(getNum(object)) // 2
+//
+//
+//
+//
+// // Write code under this line
+// const getUserNames = (array) => array.map(({ name }) => name);
+
+// // console.log(getUserNames(users));
+
+// /* [
+//   "Moore Hensley",
+//   "Sharlene Bush",
+//   "Ross Vazquez",
+//   "Elma Head",
+//   "Carey Barr",
+//   "Blackburn Dotson",
+//   "Sheree Anthony",
+// ] */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 6 - 2
+// filter
+// Получи массив объектов пользователей, отобранный по цвету глаз(свойство eyeColor),
+//     используя деструктурирующее присваивание для параметра функции({ eyeColor })
+// без пробелов и переносов на новую строку.
+
+// Используй только перебирающие методы массива которые не изменяют(не мутируют)
+// исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// Деструктурирующее присваивание для параметра функции
+// PS Деструктурирующее присваивание(ДП):
+
+// Объект как параметр без ДП
+// const object = { num: 2 }
+// function getNum(obj) { return obj.num; }
+// console.log(getNum(object)) // 2
+// ДП
+// const object = { num: 2 }
+// // const num  =  object.num;
+// const { num } = object;
+// console.log(num) // 2
+// Объект как параметр c ДП
+// const object = { num: 2 }
+// //function getNum (obj) { return obj.num; }
+// function getNum({ num }) { return num; }
+// console.log(getNum(object)) // 2
+
+// // Write code under this line
+// const getUsersWithEyeColor = (array, color) => array.filter(({ eyeColor }) => eyeColor === color);
+
+// // console.log(getUsersWithEyeColor(users, 'blue'));
+// /* [
+//   {
+//     id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
 //   },
-//   { a: 123, b: 987 }
-// );
-//
-//
-//
-//
-//
-//
-// MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP
-//
-// const numbers = [5, 25, 100, 190, 550];
-// const doubledNums = numbers.map((number) => {
-//   console.log(number);
-//   return number * 3;
-// });
-// console.log(doubledNums);
-//
-//
-//
-//
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const playerNames = players.map((player) => player.name);
-// console.log(playerNames);
-
-// const playerId = players.map((player) => player.id);
-// console.log("playerId ", playerId);
-//
-//
-// якщо треба із масиву кілька вигрузити значень
-// const res = players.map((player) => {
-//   return {
-//     name: player.name,
-//     online: player.online,
-//   };
-// });
-//
-//
-//
-// скорочений запис верхнього коду
-// const res2 = players.map(({ name, online }) => ({ name, online }));
-// console.log("Збірка вигрузок ", res2);
-//
-//
-//
-//
-//
-// зміна значення властивості
-// const updatedPlayers = players.map((player) => {
-//   return { ...player, points: player.points * 10 };
-// });
-// console.table(updatedPlayers);
-
-// скорочений запис верхнього коду
-// const updatedPlayers = players.map((player) => ({ ...player, points: player.points / 10 }));
-// console.table(updatedPlayers);
-//
-//
-//
-//
-//
-// ЗАМІНА ОДНІЄЇ ВЛАСТИВОСТІ У МАСИВІ ІЗ МАСИВІВ
-// const playerToUpdate = "player-3";
-// const updatedPlayers = players.map((player) => {
-//   if (playerToUpdate === player.id) {
-//     return {
-//       ...player,
-//       timePlayed: player.points + 100000,
-//       name: "Sasha",
-//     };
-//   }
-//   return player;
-// });
-// console.table(updatedPlayers);
-
-//
-//
-// скорочений запис верхнього кода ЧЕРЕЗ ТЕРНАРНИК
-// const playerToUpdate = "player-3";
-// const updatedPlayers = players.map((player) => {
-//   return playerToUpdate === player.id
-//     ? {
-//         ...player,
-//         timePlayed: player.points + 10000000000,
-//         name: "DARYNA",
-//       }
-//     : player;
-// });
-// console.table(updatedPlayers);
-
-// скорочений запис верхнього кода ЧЕРЕЗ ТЕРНАРНИК
-// const playerToUpdate = "player-3";
-// const updatedPlayers = players.map((player) =>
-//   playerToUpdate === player.id
-//     ? {
-//         ...player,
-//         timePlayed: player.points + 10000000000,
-//         name: "DARYNA",
-//       }
-//     : player
-// );
-// console.table(updatedPlayers);
-//
-//
-//
-//
-//ПРИКЛАД КОЛИ ОБ'ЄКТИ САМІ НЕ РІВНІ (false), а їх компоненти true
-// const obj = {
-//   a: 5,
-//   b: {
-//     c: 7,
-//     d: 10,
+//   {
+//     id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
 //   },
-// };
-
-// const copy = { ...obj };
-
-// console.log(copy);
-
-// console.log(obj.a === copy.a);
-// console.log(obj.b === copy.b);
-// console.log(obj === copy);
-//
-//
-//
-//
-//
-//
-//
-//
-// FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER FILTER
-
-// const numbers = [5, 15, 7, 30, 45];
-
-// const filteredNumbers = numbers.filter((number) => {
-//   console.log(number);
-//   return number > 25;
-// });
-// console.log(filteredNumbers);
-
-// простіший запис через стірлку
-// const numbers = [5, 15, 7, 30, 45];
-
-// const filteredNumbers = numbers.filter((number) => number > 25);
-// console.log(filteredNumbers);
-//
-//
-//
-//
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const playersOnline = players.filter((player) => player.online);
-// console.table(playersOnline);
-//
-//
-//
-// const playersTime = players.filter((player) => player.timePlayed > 150);
-// console.table(playersTime);
-//
-//
-//
-//
-//
-//
-//
-//
-// FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND FIND
-// const numbers = [5, 15, 7, 30, 45];
-// const unucumNumber = numbers.find((number) => number === 15);
-// console.log(unucumNumber);
-//
-//
-//
-//
-//
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const findPlayer = players.find((player) => player.id === "player-3");
-// console.log(findPlayer);
-
-// те саме із деструктуризацією
-// const findPlayer = players.find(({ id }) => id === "player-3");
-// console.log(findPlayer);
-//
-//
-//
-//
-//
-//
-//
-//
-// EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY EVERY
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const isOnline = players.every((player) => player.online);
-// console.log(isOnline);
-//
-//
-//
-//
-// SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME SOME
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const isSomeOnline = players.some((player) => player.online);
-// console.log(isSomeOnline);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce reduce
-//
-// const numbers = [5, 15, 7, 30, 45];
-// const total = numbers.reduce((acc, number) => acc + number, 0);
-// console.log(total);
-//
-//
-//
-// const salary = {
-//   vova: 150,
-//   petro: 100,
-//   vala: 7,
-// };
-// const summSalary = Object.values(salary).reduce((acc, sallar) => acc + sallar, 0);
-// console.log(summSalary);
-//
-//
-//
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const totalPoints = players.reduce((total, player) => total + player.points, 0);
-// console.log(totalPoints);
-//
-//
-//
-//
-// const cart = [
-//   { name: "Mango", price: 10, quantity: 1 },
-//   { name: "Poly", price: 10, quantity: 1 },
-//   { name: "Kiwi", price: 10, quantity: 1 },
-//   { name: "Ajax", price: 10, quantity: 1 },
-//   { name: "Chelsy", price: 10, quantity: 1 },
-// ];
-// const summCart = cart.reduce((total, value) => total + value.price * value.quantity, 0);
-// console.log(summCart);
-
-// попереднє із деструктуризацією
-// const summCart = cart.reduce((total, { price, quantity }) => total + price * quantity, 0);
-// console.log(summCart);
-//
-//
-//
-//
-//
-// const tweets = [
-//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
-//   { id: "001", likes: 2, tags: ["html", "css"] },
-//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-//   { id: "003", likes: 8, tags: ["css", "react"] },
-//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-// ];
-// const allTags = tweets.reduce((tags, tweet) => {
-//   tags.push(...tweet.tags);
-//   return tags;
-// }, []);
-// console.log(allTags);
-
-// попереднє із скороченням
-// const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
-// console.log(allTags);
-
-// підкрахунок кількості однакових тегів
-// const tagsStats = allTags.reduce((acc, tag) => {
-//   console.log(acc);
-//   if (acc[tag]) {
-//     acc[tag] += 1;
-//     return acc;
+//   {
+//     id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
 //   }
+// ] */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 6 - 3
+// filter, map
+// Получи массив имен пользователей(значение свойства name) по полу(значение свойства gender).
 
-//   acc[tag] = 1;
-//   return acc;
-// }, {});
-// console.log(tagsStats);
+// Используй деструктурирующее присваивание для параметра функции({ name })
+// без пробелов и переносов на новую строку.
 
-// пререробка для лінтерів - переписуємо імутабельно, тобто
-// на кожній ітерації створюємо новий об'єкт акумулятора
-// const tagsStats = allTags.reduce((acc, tag) => {
-//   if (acc[tag]) {
-//     return {
-//       ...acc,
-//       [tag]: acc[tag] + 1,
-//     };
+// Используй только перебирающие методы массива которые не изменяют(не мутируют)
+// исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// // Write code under this line
+// const getUsersWithGender = (array, gend) => array.filter(({ gender }) => gender === gend).map(({ name }) => name);
+
+// console.log(getUsersWithGender(users, 'male'));
+
+// /* [
+//   "Moore Hensley",
+//   "Ross Vazquez",
+//   "Carey Barr",
+//   "Blackburn Dotson"
+// ] */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 6 - 4
+// filter и оператор!
+// Получи массив только неактивных пользователей(отфильтруй по значению свойства isActive)
+
+// Используй деструктурирующее присваивание для параметра функции({ isActive })
+// без пробелов и переносов на новую строку.
+
+// Используй оператор!.
+
+// Используй только перебирающие методы массива которые не изменяют(не мутируют)
+// исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// // Write code under this line
+// const getInactiveUsers = array => array.filter(({ isActive }) => !isActive);
+
+// // console.log(getInactiveUsers(users));
+
+// /* [
+//   {
+//     id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     id: '150b00fb-dd82-427d-9faf-2879ea87c695',
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
 //   }
-//   return {
-//     ...acc,
-//     [tag]: 1,
-//   };
-// }, {});
-// console.log(tagsStats);
+// ]; */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 6 - 5
+// find
+// Получи объект пользователя(не массив) по уникальному значению свойства email.
 
-// спрощення верхнього до тернарника
-// const tagsStats = allTags.reduce((acc, tag) => {
-//   return acc[tag] ? { ...acc, [tag]: acc[tag] + 1 } : { ...acc, [tag]: 1 };
-// }, {});
-// console.log(tagsStats);
+// Используй деструктурирующее присваивание для параметра функции({ email }) без
+// пробелов и переносов на новую строку.
 
-// ще простіший тернарник
-// const tagsStats = allTags.reduce((acc, tag) => {
-//   return {
-//     ...acc,
-//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
-//   };
-// }, {});
-// console.log(tagsStats);
+// Используй только перебирающие методы массива которые не изменяют(не мутируют)
+// исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
 
-// ще простіший тернарник без return
-// const tagsStats = allTags.reduce(
-//   (acc, tag) => ({
-//     ...acc,
-//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
-//   }),
-//   {}
-// );
-// console.log(tagsStats);
-//
-//
-//
-//
-// const user = {
-//   name: "Mango",
-// };
-// const key = "name";
-// console.log(user[key]);
-//
-//
-//
-//
-//
-//
-//
-//
-// SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT
-// const numbers = [5, 8, 1, 1, 4, 45, 6, 1, 458, 7];
-// numbers.sort();
-// console.log(numbers);
+// // Write code under this line
+// const getUserWithEmail = (array, mail) => array.find(({ email }) => email === mail);
 
-// сортування по зростанню
-// numbers.sort((curEl, nextEl) => {
-//   return curEl - nextEl;
-// });
-// console.log(numbers);
+// console.log(getUserWithEmail(users, 'rossvazquez@xinware.com'));
 
-// сортування по спаданню
-// numbers.sort((curEl, nextEl) => {
-//   return nextEl - curEl;
-// });
-// console.log(numbers);
+// /* {
+//     id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+// } */
 
-// створення нового масиву для сортування
-// const copy = [...numbers].sort((curEl, nextEl) => {
-//   return curEl - nextEl;
-// });
-// console.log(copy);
-//
-//
-//
-//
-// СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ СОРТУВАННЯ МАСИВІВ
-//
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const copy = [...players];
-// console.log(copy);
+// // console.log(getUserWithEmail(users, 'blackburndotson@furnigeer.com'));
 
-// copy.sort((first, second) => first.timePlayed - second.timePlayed);
-// console.log(copy);
+// /* {
+//     id: '150b00fb-dd82-427d-9faf-2879ea87c695',
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+// } */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 6 - 6
+// filter, map и создание анонимных объектов
+// Получи массив из объектов, которые состоят только из свойств name и email тех
+// пользователей, которые попадают в возрастную категорию от min до max лет
+// (значение свойства age).
 
-//
-// СОРТУВАННЯ ІМЕН ПО ПЕРШІЙ БУКВІ
-// const copy = [...players].sort((a, b) => {
-//   const result = a.name[0] < b.name[0];
-//   if (result) {
-//     return -1;
-//   }
-//   if (!result) {
-//     return 1;
-//   }
-// });
-// console.table(copy);
+//     Сравнение, пример
 
-// console.log("1".charCodeAt());
-//
-//
-//
-//
-//
-//
-//
-//
-// FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT FLAT
+// const x = 13;
 
-// const array = [9, 4, [12, [5, 87], 11]];
-// console.log(array.flat(2));
+// // num больше 10 ?
+// const larger = num > 10; // true
 
-// спрощення раніше зазначених задач
-// const tweets = [
-//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
-//   { id: "001", likes: 2, tags: ["html", "css"] },
-//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-//   { id: "003", likes: 8, tags: ["css", "react"] },
-//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-// ];
-// const tags = tweets.map((t) => t.tags).flat();
-// console.log(tags);
+// // num меньше 100 ?
+// const smaller = 100 > num; // true
 
-// FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap FlatMap
-// спрощення попередного коду
-// const tweets = [
-//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
-//   { id: "001", likes: 2, tags: ["html", "css"] },
-//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-//   { id: "003", likes: 8, tags: ["css", "react"] },
-//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-// ];
-// const tags = tweets.flatMap((t) => t.tags);
-// console.log(tags);
-//
-//
-//
-//
-//
-//
-//
-//
-// ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ   ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ  ЦЕПОЧКИ ВИЗОВОВ
-// задача відсортувати гравців онлайн і сортування за зростанням
-// const players = [
-//   { id: "player-1", name: "Mango", timePlayed: 180, points: 54, online: false },
-//   { id: "player-2", name: "Poly", timePlayed: 458, points: 45, online: true },
-//   { id: "player-3", name: "Kiwi", timePlayed: 13, points: 25, online: true },
-//   { id: "player-4", name: "Ajax", timePlayed: 89, points: 322, online: true },
-//   { id: "player-5", name: "Chelsy", timePlayed: 130, points: 3, online: false },
-// ];
-// const onlineAndSorted = players.filter((player) => player.online).sort((a, b) => a.points - b.points);
+// // num находитя между 10 и 100 ?
+// const between = smaller && larger; // true
+// Создание анонимных объектов:
 
-// console.table(onlineAndSorted);
-//
-//
-//
-//
-//
-//
-//
-// Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash Lodash
-// https://www.jsdelivr.com/package/npm/lodash
-// посилання на бібліотеку в НТМЛ
-// <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>;
+// const arr = Array(3)
+//     .fill('')
+//     .map((e, i) => ({ ['index']: i }));
+// /* [ { index: 0 }, { index: 1 }, { index: 2 } ] */
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный
+// массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
 
-// console.dir(_);
+// // Write code under this line
+// const getUsersWithAge = (array, min, max) => array
+//     .filter(({ age }) => age >= min && age <= max)
+//     .map(({ name, email }) => ({ name, email }));
+
+// // console.log(getUsersWithAge(users, 20, 30));
+// /* [
+//     { name: 'Ross Vazquez', email: 'rossvazquez@xinware.com' },
+//     { name: 'Elma Head', email: 'elmahead@omatom.com' },
+//     { name: 'Carey Barr', email: 'careybarr@nurali.com' }
+// ] */
+
+// // console.log(getUsersWithAge(users, 30, 40));
+// /* [
+//     { name: 'Moore Hensley', email: 'moorehensley@indexia.com' },
+//     { name: 'Sharlene Bush', email: 'sharlenebush@tubesys.com' },
+//     { name: 'Blackburn Dotson', email: 'blackburndotson@furnigeer.com' },
+//     { name: 'Sheree Anthony', email: 'shereeanthony@kog.com' }
+// ] */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Задача 6 - 7
+// reduce
+// Получи общую сумму баланса(сумму значений свойства balance) всех пользователей.
+
+// Используй деструктурирующее присваивание для параметра функции { balance } без пробелов
+// и переносов на новую строку
+
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.
+// Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+const users = [
+  {
+    id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    id: "88beb2f3-e4c2-49f3-a0a0-ecf957a95af3",
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    id: "249b6175-5c30-44c6-b154-f120923736f5",
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    id: "150b00fb-dd82-427d-9faf-2879ea87c695",
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    id: "e1bf46ab-7168-491e-925e-f01e21394812",
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
+// Write code under this line
+const calculateTotalBalance = (array) => array.reduce((acc, user) => acc + user.balance, 0);
+console.log(calculateTotalBalance(users));
+// 20916
